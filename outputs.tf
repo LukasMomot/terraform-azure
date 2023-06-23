@@ -6,3 +6,12 @@ output "rg_location" {
 output "iterations_next" {
     value = [for it in var.iterations : it + 2]
 }
+
+output "app_standalone_key" {
+    value = nonsensitive(azurerm_static_site.standalone.api_key)
+    # sensitive = true
+}
+
+output "app_standalone_host" {
+    value = azurerm_static_site.standalone.default_host_name
+}

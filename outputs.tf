@@ -7,6 +7,7 @@ output "iterations_next" {
     value = [for it in var.iterations : it + 2]
 }
 
+# TODO: Add this to object/map
 output "app_standalone_key" {
     value = nonsensitive(azurerm_static_site.standalone.api_key)
     # sensitive = true

@@ -1,3 +1,9 @@
+variable "applications" {
+  description = "List of applications"
+  type = list(string)
+  default = [ "angular-ghactions", "angular-pipelines" ]
+}
+
 variable "environment" {
   description = "Environment to be used"
   default = "dev"

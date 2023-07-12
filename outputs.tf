@@ -1,5 +1,5 @@
 output "rg_location" {
-    value = azurerm_resource_group.first_rg.location
+    value = azurerm_resource_group.rg.location
     description = "Location of the create resource group"
 }
 
@@ -9,10 +9,10 @@ output "iterations_next" {
 
 # TODO: Add this to object/map
 output "app_standalone_key" {
-    value = nonsensitive(azurerm_static_site.standalone.api_key)
-    # sensitive = true
+    value = values(azurerm_static_site.static_app).*.api_key
+    sensitive = true
 }
 
 output "app_standalone_host" {
-    value = azurerm_static_site.standalone.default_host_name
+    value = values(azurerm_static_site.static_app).*.default_host_name
 }

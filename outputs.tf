@@ -16,3 +16,7 @@ output "app_standalone_key" {
 output "app_standalone_host" {
     value = values(azurerm_static_site.static_app).*.default_host_name
 }
+
+output "app_standalone_key_2" {
+    value = [for ak in values(azurerm_static_site.static_app).*.api_key : nonsensitive(ak) ]
+}

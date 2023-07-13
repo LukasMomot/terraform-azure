@@ -9,12 +9,12 @@ output "iterations_next" {
 
 # TODO: Add this to object/map
 output "app_standalone_key" {
-    value = values(azurerm_static_site.static_app).*.api_key
+    value = values(azurerm_static_site.static_app)[*].api_key
     sensitive = true
 }
 
 output "app_standalone_host" {
-    value = values(azurerm_static_site.static_app).*.default_host_name
+    value = values(azurerm_static_site.static_app)[*].default_host_name
 }
 
 output "app_standalone_key_2" {

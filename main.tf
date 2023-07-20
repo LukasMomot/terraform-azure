@@ -17,6 +17,7 @@ provider "azurerm" {
   features {}
 }
 
+# TODO: Add module with var: env, applications => use in main.tf
 resource "azurerm_resource_group" "rg" {
   name = "${upper(var.environment)}-apps-rg"
   location = "West Europe"

@@ -20,7 +20,7 @@ provider "azurerm" {
 module "webpage_azure_pipelines" {
   source = "./modules/full_webpage"
 
-  for_each = toset(["dev", "uat", "prod"])
+  for_each = toset(var.environments)
 
   application = "azure-pipelines"
   environment = each.key

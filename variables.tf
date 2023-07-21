@@ -1,15 +1,16 @@
-variable "applications" {
-  description = "List of applications"
-  type        = list(string)
-  default     = ["angular-ghactions", "angular-pipelines"]
-}
+# variable "applications" {
+#   description = "List of applications"
+#   type        = list(string)
+#   default     = ["angular-ghactions", "angular-pipelines"]
+# }
 
-variable "environment" {
+variable "environments" {
   description = "Environment to be used"
-  default     = "dev"
+  type        = list(string)
+  default     = ["dev", "uat", "prod"]
 }
 
-variable "iterations" {
-  default     = [1, 2, 3, 4]
-  description = "Iteration numbers"
-}
+# variable "iterations" {
+#   default     = [1, 2, 3, 4]
+#   description = "Iteration numbers"
+# }

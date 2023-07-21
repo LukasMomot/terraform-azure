@@ -1,6 +1,6 @@
 output "web_pages" {
-    value = concat(values(module.webpage_azure_pipelines)[*].webpage,
-     values(module.webpage_angular_standalone_actions)[*].webpage)
+  value = concat(values(module.webpage_azure_pipelines)[*].webpage,
+  values(module.webpage_angular_standalone_actions)[*].webpage)
 }
 
 # output "rg_location" {

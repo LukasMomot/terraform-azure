@@ -26,6 +26,15 @@ module "webpage_azure_pipelines" {
   environment = each.key
 }
 
+module "webpage_angular_standalone_actions" {
+  source = "./modules/full_webpage"
+
+  for_each = toset(["dev"])
+
+  application = "angular-standalone-actions"
+  environment = each.key
+}
+
 # resource "azurerm_resource_group" "rg" {
 #   name = "${upper(var.environment)}-apps-rg"
 #   location = "West Europe"

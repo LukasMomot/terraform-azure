@@ -1,3 +1,7 @@
+output "web_pages" {
+    value = values(module.webpage_azure_pipelines)[*].webpage
+}
+
 # output "rg_location" {
 #     value = azurerm_resource_group.rg.location
 #     description = "Location of the create resource group"
